@@ -1,5 +1,13 @@
+<html>
+<head>
+<!-- Internal Javascript Function -->
+<script language="javaScript">
+
+console.log("hva skjer?");
+var ti = 10;
+ti;
 var vokaler = "aeiou";
-var setning = "dette er roversproket";
+var setning = "dette er supert";
 var slutt = '';
 var i;
 for (i = 0; i <= setning.length; i++) {
@@ -11,3 +19,11 @@ for (i = 0; i <= setning.length; i++) {
     }
 }
 console.log(slutt);
+
+</script>
+<!-- External Javascript Function -->
+<script language="JavaScript" src="javascript.js" type="text/javascript"/>
+</head>
+<body>
+</body>
+</html>
