@@ -5,7 +5,6 @@ Much of the code and exercises a stolen from different sources on the web.
 
 10 exercises
 -------
-
 Is stolen from a swedish website
 http://www.ling.gu.se/~lager/kurser/webtechnology/lab4.html
 
@@ -29,6 +28,6 @@ Roversproket
 -----------
 Is a scandinavian word "game"
 
-Test
--------
+### Test
+
 Not sure ;)

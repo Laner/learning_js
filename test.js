@@ -40,6 +40,7 @@ for (i = 0; i <= myArray.length; i++) {
     console.log(myArray[i]);
 }
 
+
 // list input
 console.log("who to turn next?: ");
 for (i = 0; i <= myArray.length; i++) {
