@@ -8,6 +8,10 @@ Much of the code and exercises a stolen from different sources on the web.
 Is stolen from a swedish website
 http://www.ling.gu.se/~lager/kurser/webtechnology/lab4.html
 
+Areal
+-------
+Returns areal or cubic based on amount of numbers input
+
 Blackjack
 -------
 Is from www.codecademy.com They have a course in Javascript that is the reason for this git
