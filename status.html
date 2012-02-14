@@ -1,0 +1,49 @@
+
+<html>
+<body>
+
+<div id="container" style="width:1280px">
+
+<div id="header" style="background-color:#FFA500;">
+<h1 style="margin-bottom:0;">
+        <script type="text/javascript">
+        
+var currentTime = new Date();
+var dag = currentTime.getDate() + 1;
+var month = currentTime.getMonth() + 1;
+var year = currentTime.getFullYear();
+var time = currentTime.getHours();
+var minutt = currentTime.getMinutes();
+var monthName = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep", "okt", "nov", "des"];
+var mnth = monthName[month - 1];
+document.write(dag + "." + mnth + " " + year + " Klokken " + time + ":" + minutt);
+/*
+getTime() - Number of milliseconds since 1/1/1970 @ 12:00 AM
+getSeconds() - Number of seconds (0-59)
+getMinutes() - Number of minutes (0-59)
+getHours() - Number of hours (0-23)
+getDay() - Day of the week(0-6). 0 = Sunday, ... , 6 = Saturday
+getDate() - Day of the month (0-31)
+getMonth() - Number of month (0-11)
+getFullYear() - The four digit year (1970-9999)
+*/
+
+</script>
+</h1></div>
+
+<div id="menu" style="background-color:#FFD700;width:480px;float:left;">
+<b>Menu</b><br />
+HTML<br />
+CSS<br />
+JavaScript</div>
+
+<div id="content" style="background-color:#EEEEEE;width:800px;float:left;">
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=2&amp;hl=no&amp;bgcolor=%23FFFFFF&amp;src=2186ge36ojmql38q0bkj74smio%40group.calendar.google.com&amp;color=%23333333&amp;src=fu26vg1652c7l6gdhuofnl4gkk%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=Europe%2FOslo" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+Copyright © 2011 W3Schools.com</div>
+
+</div>
+
+</body>
+</html>
