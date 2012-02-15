@@ -16,3 +16,12 @@ function days_between(date1, date2) {
     return Math.round(difference_ms/ONE_DAY)
 
 }
+
+/// working!
+var today = new Date();
+var futureDate = new Date(2012,2,7);
+var diff = futureDate - today;
+console.log(diff);
+var msInADay = 1000 * 60 * 60 * 24;
+console.log(Math.floor(diff / msInADay + 1));
+console.log(futureDate.toDateString());
