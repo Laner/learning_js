@@ -15,6 +15,8 @@ if(eregi($pattern, $file)){ //if this file is a valid image
 echo 'galleryarray['.$curimage.']="'.$file .'";';
 $curimage++;
 }
+
+
 }
 
 closedir($handle);
@@ -27,3 +29,23 @@ returnimages() //Output the array elements containing the image file names
 ?> 
 
 /* How to get this one the list all js files*/
+
+<html>
+<head>
+<script type="text/javascript">
+ 
+function alignl(ele){
+     document.getElementById('lay').style.align=ele;
+}
+</script>
+</head>
+<body>
+<layer id='lay'></layer>
+<select id='s' name='s'  onchange="alignl(this.value);">
+<option value="left">left</option>
+<option value="right">right</option>
+<option value="center">center</option>
+<option value="top">top</option>
+</select>
+</body>
+</html>
