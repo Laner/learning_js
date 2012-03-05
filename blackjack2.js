@@ -54,6 +54,9 @@ function Card(s, n) {
         return rank;
     };
 }
+
+//Make a deck
+
 // answer to extra credit 1.
 function Hand() {
     var cards = [];
