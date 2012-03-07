@@ -57,25 +57,23 @@ function player(name) {
     this.hand = [];
     this.score = function() {
         var handsize = this.hand.length;
-        var score = 0;
-        //first we check for aces
+        var score = 0; 
         var haveace = false;
-        for (var i = 0; i < handsize; i++) {
-            if (this.hand[i].getRank() === "A") {
-                haveace = true;
-                break;
-            }
-        }
-        //loop the hand and add score
+        //first we check for aces
+        //and then loop the hand and add score
         for (var h = 0; h < handsize; h++) {
-            var rank = this.hand[i].getRank();
+            var rank = this.hand[h].getRank();
             if ( rank === "A") {
                 score += 11;
-            } else if ( rank === "Q") {
+                haveace = true;
+            } else if (isNaN(rank)) {
                 score += 10;
             } else {
-                score += this.hand[i].getRank();
+                score += this.hand[h].getRank();
             }
+        }
+        if (score > 21 && haveace) {
+            score -= 10;
         }
         return score;
     };
@@ -89,8 +87,14 @@ console.log(Runar.hand.length);
 var test = deck[0];
 Runar.hand.push(test);
 deck.splice(0,1);
+var test = deck[0];
+Runar.hand.push(test);
+deck.splice(0,1);
+var test = deck[0];
+Runar.hand.push(test);
+deck.splice(0,1);
 console.log(Runar.hand.length);
-console.log("here: " + Runar.hand[0].getSuit());
-var test = Runar.hand[0];
-console.log(test.getRank());
+console.log("here: " + Runar.hand[0].getRank());
+console.log("there: " + Runar.hand[1].getRank());
+console.log("where: " + Runar.hand[2].getRank());
 console.log(Runar.score());
