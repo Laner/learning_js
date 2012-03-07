@@ -4,7 +4,7 @@
 
 <div id="container" style="width:1280px">
 
-<div id="header" style="background-color:#FFA500;">
+<div id="header" style="background-color:#999999;">
 <h1 style="margin-bottom:0;">
         <script type="text/javascript">
         
@@ -31,16 +31,23 @@ getFullYear() - The four digit year (1970-9999)
 </script>
 </h1></div>
 
-<div id="menu" style="background-color:#FFD700;width:480px;float:left;">
-<b>Menu</b><br />
-HTML<br />
-CSS<br />
-JavaScript</div>
+<div id="menu" style="background-color:#666666;width:480px;float:left;">
+<h2>
+<script type="text/javascript">
+	var today = new Date();
+	var futureDate = new Date(2012,2,7);
+	var diff = futureDate - today;
+	var msInADay = 1000 * 60 * 60 * 24;
+	console.log(futureDate.toDateString());
+	document.write(Math.floor(diff / msInADay + 1));
+</script>
+</h2>
+</div>
 
 <div id="content" style="background-color:#EEEEEE;width:800px;float:left;">
 <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=2&amp;hl=no&amp;bgcolor=%23FFFFFF&amp;src=2186ge36ojmql38q0bkj74smio%40group.calendar.google.com&amp;color=%23333333&amp;src=fu26vg1652c7l6gdhuofnl4gkk%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=Europe%2FOslo" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
-<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+<div id="footer" style="background-color:#CCCCCC;clear:both;text-align:center;">
 Copyright © 2011 W3Schools.com</div>
 
 </div>
