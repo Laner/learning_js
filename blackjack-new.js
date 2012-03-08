@@ -81,12 +81,14 @@ function player(name) {
     this.hitme = function() {
         deal(this, 1);
     };
-    this.totalScore;
+    this.totalScore = 0;
     this.showHand = function() {
         var length = this.hand.length;
+        var t =  "";
         for (var h = 0; h < length; h++) {
-            return this.hand[h].getCard() + this.showHand();
+            t += this.hand[h].getCard() + "\n";
         }
+        return t;
     };
 }
 
