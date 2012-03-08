@@ -32,7 +32,8 @@ function makeDeck(nrOfDecks) {
     for (var i = 0; i < nrOfDecks; i++) {
         for (var s = 0; s < suitlength; s++) {
             for (var r = 0; r < ranklength; r++) {
-                deck.push(new Card(suit[s], rank[r]));
+                var card = new Card(suit[s], rank[r]);
+                deck.push(card);
             }
             
         }
@@ -77,6 +78,18 @@ function player(name) {
         }
         return score;
     };
+    this.hitme = function() {
+        deal(this, 1);
+    };
+}
+
+
+// a function to deal cards to players
+// TODO: add a loop so that each player gets one card at a time
+function deal(toWhom, nrOfCards) {
+    for (var i = 0; i < nrOfCards; i++) {
+        toWhom.hand.push(deck.shift());
+    }
 }
 
 makeDeck(1);
@@ -84,17 +97,11 @@ makeDeck(1);
 var Runar = new player("runar");
 console.log(deck[0]);
 console.log(Runar.hand.length);
-var test = deck[0];
-Runar.hand.push(test);
-deck.splice(0,1);
-var test = deck[0];
-Runar.hand.push(test);
-deck.splice(0,1);
-var test = deck[0];
-Runar.hand.push(test);
-deck.splice(0,1);
+deal(Runar, 3);
 console.log(Runar.hand.length);
 console.log("here: " + Runar.hand[0].getRank());
 console.log("there: " + Runar.hand[1].getRank());
 console.log("where: " + Runar.hand[2].getRank());
+Runar.hitme();
+console.log("every: " + Runar.hand[3].getRank());
 console.log(Runar.score());
