@@ -81,27 +81,51 @@ function player(name) {
     this.hitme = function() {
         deal(this, 1);
     };
+    this.totalScore;
+    this.showHand = function() {
+        var length = this.hand.length;
+        for (var h = 0; h < length; h++) {
+            return this.hand[h].getCard() + this.showHand();
+        }
+    };
 }
 
 
 // a function to deal cards to players
 // TODO: add a loop so that each player gets one card at a time
 function deal(toWhom, nrOfCards) {
+    var length = toWhom.length;
     for (var i = 0; i < nrOfCards; i++) {
-        toWhom.hand.push(deck.shift());
+        for (var j = 0; j < length; j++) {
+            toWhom[j].hand.push(deck.shift());
+        }
     }
 }
 
-makeDeck(1);
+// a game function that contains as it gets played.
+function game() {
+    makeDeck(1);
+    var Runar = new player("runar");
+    var Dealer = new player("dealer");
+    console.log("Welcome to BlackJack!");
+    deal([Runar, Dealer], 2);
+    console.log(Runar.showHand());
+    console.log("For the score of: " + Runar.score());
+    console.log(Dealer.showHand());
+    console.log("For the score of: " + Dealer.score());
+    
+}
+game();
+
 //listDeck(deck);
-var Runar = new player("runar");
-console.log(deck[0]);
-console.log(Runar.hand.length);
-deal(Runar, 3);
-console.log(Runar.hand.length);
-console.log("here: " + Runar.hand[0].getRank());
-console.log("there: " + Runar.hand[1].getRank());
-console.log("where: " + Runar.hand[2].getRank());
-Runar.hitme();
-console.log("every: " + Runar.hand[3].getRank());
-console.log(Runar.score());
+//var Runar = new player("runar");
+//console.log(deck[0]);
+//console.log(Runar.hand.length);
+//deal(Runar, 3);
+//console.log(Runar.hand.length);
+//console.log("here: " + Runar.hand[0].getRank());
+//console.log("there: " + Runar.hand[1].getRank());
+//console.log("where: " + Runar.hand[2].getRank());
+//Runar.hitme();
+//console.log("every: " + Runar.hand[3].getRank());
+//console.log(Runar.score());
