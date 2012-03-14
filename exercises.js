@@ -32,9 +32,9 @@ console.log("Ser du meg?");
 
 //Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
-function voweltest (letter) {
-	var vowels = "aeiou",
-		if ( letter.indexOf(letter)) {
+function voweltest(letter) {
+	var vowels = "aeiou";
+		if ( vowels.indexOf(letter)) {
 			return true;
 		} else	{
 			return false;
@@ -50,7 +50,7 @@ function sum(x) {
 		i = 0,
 		total = 0;
 		for (i = 0; x[count] == true; i++) {
-			total´+= x[count];
+			total += x[count];
 		}
 		return total
 }
@@ -69,7 +69,7 @@ function sum(x) {
 function sum(tall) {
 	var i = 0;
 	var resultat = 0;
-	for(i = 0 0; tall[i]; i++) {
+	for(i = 0 ; tall[i]; i++) {
 		resultat += tall[i];
 	};
 	}

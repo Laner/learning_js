@@ -1,6 +1,6 @@
 // Our deal function will return a random card
 var deal = function() {
-  card = Math.floor(Math.random()*52+1);
+  var card = Math.floor(Math.random()*52+1);
   return card;
 };
 
@@ -22,7 +22,7 @@ var getValue = function(card) {
         return card % 13;
     }
   // Otherwise, we just want its number value
-}
+};
         
 // Score the hand
 function score() {
