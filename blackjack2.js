@@ -74,7 +74,7 @@ function Hand() {
         cards[1] = new deal();
     };
     this.hitme = function() {
-        cards[cards.length] = new deal();
+        cards.push(new deal());
     };
     this.listCards = function() {
         var idx = cards.length;

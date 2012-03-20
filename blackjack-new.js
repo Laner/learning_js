@@ -84,11 +84,15 @@ function player(name) {
     this.totalScore = 0;
     this.showHand = function() {
         var length = this.hand.length;
-        var t =  "";
+        var currentHand =  "";
         for (var h = 0; h < length; h++) {
-            t += this.hand[h].getCard() + "\n";
+    		if (h < length - 1) {
+				currentHand += this.hand[h].getCard() + "\n";
+			} else {
+				currentHand += this.hand[h].getCard() ;
+			}
         }
-        return t;
+        return currentHand;
     };
 }
 
@@ -103,6 +107,15 @@ function deal(toWhom, nrOfCards) {
         }
     }
 }
+// show hand
+function showHand(players) {
+	var length = players.length;
+	for (var i = 0; i < length; i++) {
+		console.log(players[i].name);
+	    console.log(players[i].showHand());
+	    console.log("For the score of: " + players[i].score() + "\n");		
+	}
+}
 
 // a game function that contains as it gets played.
 function game() {
@@ -111,12 +124,19 @@ function game() {
     var Dealer = new player("dealer");
     console.log("Welcome to BlackJack!");
     deal([Runar, Dealer], 2);
-    console.log(Runar.showHand());
-    console.log("For the score of: " + Runar.score());
-    console.log(Dealer.showHand());
-    console.log("For the score of: " + Dealer.score());
-    
-}
+	showHand([Runar, Dealer]);
+    var hit = true;
+    while (hit) {
+        hit = confirm ("Hit?");
+        if (hit === true) {
+            deal([Runar],1);
+            showHand([Runar]);
+            
+        }
+    }
+        
+  }
+
 game();
 
 //listDeck(deck);
