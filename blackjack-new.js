@@ -1,50 +1,60 @@
 // make a number of decks from the predefined arrays
 // that filles an array with cards
-var deck = [];
 function makeDeck(nrOfDecks) {
+    //make a deck array to fill with cards
+    deck = [];
     // arrays to fill the deck from
     var suit = ["Diamonds", "Clubs", "Hearts", "Spades"];
     var rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"];
     // set the length of the arrays
     var suitlength = suit.length;
     var ranklength = rank.length;
-    //fill the deck based on the parameters
+    //fill the deck based with card obj that have uniqe cominations
+    //loop through for each deck I want to create
     for (var i = 0; i < nrOfDecks; i++) {
+        //then loop through all suits in array
         for (var s = 0; s < suitlength; s++) {
+            //loop through all rank in array
             for (var r = 0; r < ranklength; r++) {
+                //create card obj with parameters from loop counters
                 var card = new Card(suit[s], rank[r]);
+                //insert into deck
                 deck.push(card);
             }
 
         }
     }
     // shuffles the deck by the built in .sort method
-    deck.sort(function() {
-        return 0.5 - Math.random()
-    });
-    return deck;
+    deck.sort(function() {return 0.5 - Math.random();});
+    //return deck;
 }
 // Card Constructor
 function Card(s, n) {
     var suit = s;
     var numb = n;
+    //getter for suit nr
     this.getSuit = function() {
         return suit;
     };
+    //getter for rank, can be string or integer
     this.getNumber = function() {
         return numb;
     };
+    //getter that transelates rank into point value
     this.getValue = function() {
         if (numb === "Ace") {
             return 11;
-        } else if (typeof numb == "string") {
+        } else if (typeof(numb) == "string") {
             return 10;
         } else {
             return numb;
         }
     };
 }
+//Make 6 dekcs
+makeDeck(6);
 
+//Hand constructor
 function Hand() {
     var cards = [];
     cards.push(deck.shift());
@@ -77,69 +87,44 @@ function Hand() {
         }
         return handList;
     };
-    this.firstCardValue = function() {
-        return cards[0].getValue();
-    };
     this.hitMe = function() {
         cards.push(deck.shift());
 
     };
+    this.getCards = function() {
+        return cards;
+    };
 }
-var Dealer = {
-    play: function() {
-        while (this.score() <= 16) {
-            this.hitMe();
-        }
-    return cards;
-    },
-    firstCardValue: function () {
-        return cards[0].getValue();
+
+//make a dealer
+var Dealer = new Hand();
+//how the dealer play
+Dealer.play = function() {
+    while (this.score() <= 16) {
+           this.hitMe();
+    }
+    return this.printHand();
+};
+//show pointvalue of dealers first card
+Dealer.firstCardValue = function() {
+        return this.getHand()[0].getValue();
+};
+
+for (var prop in Dealer) {
+    console.log("Dealer har: " +prop);
+}
+//player and basic strat for the player
+var Player = new Hand();
+Player.play = function() {
+    var dealersCard = Dealer.firstCardValue();
+    var handSum = Player.score();
+    if (Player.getHand()[0].getValue() === Player.getHand()[1].getValue()) {
+        
     }
 };
 
-Dealer.prototype = new Hand();
-
-console.log(Dealer.play());
+ // TODO add strategy http://www.blackjackinfo.com/bjbse.php?numdecks=6+decks&soft17=s17&dbl=all&das=yes&surr=ns&peek=no
+ 
 console.log(Dealer.firstCardValue());
-
-function playAsDealer() {
-    var hnd = new Hand();
-    while (hnd.score() <= 16) {
-        hnd.hitMe();
-    }
-    return hnd;
-}
-function playAsUser() {
-    var playerHand = new Hand();
-    while (playerHand.score() <= 18) {
-        playerHand.hitMe();
-    }
-    return playerHand;
-    // TODO add strategy http://www.blackjackinfo.com/bjbse.php?numdecks=6+decks&soft17=s17&dbl=all&das=yes&surr=ns&peek=no
-}
-function declareWinner(userHand, dealerHand) {
-    function getScore(hand) {
-        return hand.score() > 21 ? 0: hand.score();
-    }
-    var userScore = getScore(userHand);
-    var dealerScore = getScore(dealerHand);
-    if (userScore > dealerScore) {
-        return "You win!";
-    }
-    else if (userScore < dealerScore) {
-        return "You lose!";
-    }
-    else return "You tied!";
-}
-function playGame() {
-    makeDeck(1);
-    var player = playAsUser();
-    var dealer = playAsDealer();
-    var result = declareWinner(player, dealer);
-    console.log("Players has: " + player.printHand());
-    console.log("For the score of: " + player.score());
-    console.log("Dealers has: " + dealer.printHand());
-    console.log("For the score of: " + dealer.score());
-    console.log("Result: " + result);
-}
-//playGame();
+console.log(Hand);
+console.log(Dealer);
