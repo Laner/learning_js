@@ -1,5 +1,7 @@
 // Make your card constructor again here, but make sure to use private
 // variables!
+
+
 function Card(s, n) {
     var suit = s;
     var number = n;
@@ -18,46 +20,48 @@ function Card(s, n) {
             return number;
         }
     };
+    
     this.getSuitName = function() {
         switch (suit) {
-            case 1:
-                return "Diamonds";
-            case 2:
-                return "Clubs";
-            case 3:
-                return "Hearts";
-            case 4:
-                return "Spades";
-            default:
-                return "No suit";
+        case 1:
+            return "Diamonds";
+        case 2:
+            return "Clubs";
+        case 3:
+            return "Hearts";
+        case 4:
+            return "Spades";
+        default:
+            return "No suit";
         }
     };
     this.getCardName = function() {
         var rank = "";
         switch (number) {
-            case 1:
-                rank = "Ace";
-                break;
-            case 11:
-                rank = "Knight";
-                break;
-            case 12:
-                rank = "Queen";
-                break;
-            case 13:
-                rank = "King";
-                break;
-            default:
-                rank = number;
-                break;
+        case 1:
+            rank = "Ace";
+            break;
+        case 11:
+            rank = "Knight";
+            break;
+        case 12:
+            rank = "Queen";
+            break;
+        case 13:
+            rank = "King";
+            break;
+        default:
+            rank = number;
+            break;
         }
         return rank;
     };
 }
 
 //Make a deck
-
 // answer to extra credit 1.
+
+
 function Hand() {
     var cards = [];
     this.score = function() {
@@ -88,6 +92,8 @@ function Hand() {
 // Make a deal function here.  It should return a new card with a suit
 // that is a random number from 1 to 4, and a number that is a random
 // number between 1 and 13
+
+
 function deal() {
     var suit = Math.floor(Math.random() * 4 + 1);
     var number = Math.floor(Math.random() * 13 + 1);
@@ -95,19 +101,18 @@ function deal() {
 }
 
 /*
-TODO - What kind of methods might we want to add to see or print out the 
-cards in a hand, so that a 12 of suit 3 prints as "King of Hearts"?
+TODO - What kind of methods might we want to add to see or print out the cards in a hand, so that a 12 of suit 3 prints as "King of Hearts"?
 */
 
 
 /*
 TODO
-Our Card class is almost set, but there is definitely a problem with our 
-Hand class right now because it only holds 2 cards. How can we change the 
-Hand class to make it flexible so we can continue adding cards? 
+Our Card class is almost set, but there is definitely a problem with our
+Hand class right now because it only holds 2 cards. How can we change the
+Hand class to make it flexible so we can continue adding cards?
 (As in when the player says "hit me")
 */
-var myHand = new Hand(); 
+var myHand = new Hand();
 //var yourHand = new Hand();
 myHand.init();
 //yourHand.init();
@@ -116,14 +121,16 @@ console.log("-------------------");
 myHand.hitme();
 console.log(myHand.score());
 myHand.listCards();
+alert("ja!");
 //console.log("I scored a "+myHand.score()+" and you scored a "+ yourHand.score());
 //console.log("In your hand you have" + myHand.card1.getRank() + " of " + myHand.card1.getSuitName());
 /*
 if(yourHand.score() > myHand.score()) {
-    console.log("you win!"); 
+    console.log("you win!");
     } else if(yourHand.score() < myHand.score()) {
-        console.log("I win!"); 
+        console.log("I win!");
     } else {
         console.log("We tied!");
     }
+    
     */
