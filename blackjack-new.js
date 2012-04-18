@@ -94,6 +94,16 @@ function Hand() {
     this.getCards = function() {
         return cards;
     };
+    /* TODO:
+    Splitting Pairs
+    -check for pair
+    -spilt pair into new hands
+    -play hands
+    -compare to dealer
+    */
+    /* TODO:
+    Doubling Down - double bet, only one more card
+    */
 }
 
 //make a dealer
