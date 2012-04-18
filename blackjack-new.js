@@ -54,7 +54,7 @@ function Card(s, n) {
 //Make 6 dekcs
 makeDeck(6);
 
-//Hand constructor
+//Hand constructor TODO: add optional arguments for inputing array in scoring.
 function Hand() {
     var cards = [];
     cards.push(deck.shift());
