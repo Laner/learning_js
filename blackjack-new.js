@@ -85,7 +85,7 @@ function Hand() {
         for (var i = 0; i < length; i++) {
             handList += cards[i].getNumber() + " of " + cards[i].getSuit() + ", ";
         }
-        return handList;
+        return handList; // TODO fix todo
     };
     this.hitMe = function() {
         cards.push(deck.shift());
@@ -94,15 +94,20 @@ function Hand() {
     this.getCards = function() {
         return cards;
     };
-    /* TODO:
+    
+    //FIXME vær kjapp
+    /* 
+    TODO: skrive mer 
     Splitting Pairs
     -check for pair
     -spilt pair into new hands
     -play hands
     -compare to dealer
     */
-    /* TODO:
+    /* 
+    TODO:
     Doubling Down - double bet, only one more card
+    TODO: add bets
     */
 }
 
