@@ -24,7 +24,7 @@ function makeDeck(nrOfDecks) {
 
         }
     }
-    // shuffles the deck by the built in .sort method
+    // shuffles the deck by the built in sort method
     deck.sort(function() {return 0.5 - Math.random();});
     //return deck;
 }
@@ -94,17 +94,17 @@ function Hand() {
     this.getCards = function() {
         return cards;
     };
-    
+    this.splitHand = function () {
+        
+    }    
     //FIXME vær kjapp
-    /* 
-    TODO: skrive mer 
+    /*
+    TODO: skrive mer
     Splitting Pairs
     -check for pair
     -spilt pair into new hands
     -play hands
     -compare to dealer
-    */
-    /* 
     TODO:
     Doubling Down - double bet, only one more card
     TODO: add bets

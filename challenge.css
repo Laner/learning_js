@@ -1,0 +1,25 @@
+.left_column {
+	margin-right: 170px;
+}
+.right_column {
+	float: right;
+	width: 160px;
+	clear: right;
+}
+#nav_container ul {
+	list-style-type: none;
+	background: gray;
+	margin-bottom: 15px;
+}
+#nav_container ul li {
+	display: inline-block;
+}
+#nav_container ul li a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 5px;
+	color: white;
+}
+#nav_container ul lu a:hover {
+	background-color: black;
+}
