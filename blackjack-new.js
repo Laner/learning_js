@@ -1,5 +1,30 @@
 // make a number of decks from the predefined arrays
 // that filles an array with cards
+// 1. jun - 2012 - revison for singel responsebility
+
+// Card Constructor - only has the values of the cards
+function Card(s, n) {
+    var suit = s;
+    var numb = n;
+    //getter for suit nr
+    this.getSuit = function() {
+        return suit;
+    };
+    //getter for rank, can be string or integer
+    this.getNumber = function() {
+        return numb;
+    };
+    //getter that transelates rank into point value
+    this.getValue = function() {
+        if (numb === "Ace") {
+            return 11;
+        } else if (typeof(numb) == "string") {
+            return 10;
+        } else {
+            return numb;
+        }
+    };
+}
 function makeDeck(nrOfDecks) {
     //make a deck array to fill with cards
     deck = [];
@@ -28,29 +53,7 @@ function makeDeck(nrOfDecks) {
     deck.sort(function() {return 0.5 - Math.random();});
     //return deck;
 }
-// Card Constructor
-function Card(s, n) {
-    var suit = s;
-    var numb = n;
-    //getter for suit nr
-    this.getSuit = function() {
-        return suit;
-    };
-    //getter for rank, can be string or integer
-    this.getNumber = function() {
-        return numb;
-    };
-    //getter that transelates rank into point value
-    this.getValue = function() {
-        if (numb === "Ace") {
-            return 11;
-        } else if (typeof(numb) == "string") {
-            return 10;
-        } else {
-            return numb;
-        }
-    };
-}
+
 //Make 6 dekcs
 makeDeck(6);
 
