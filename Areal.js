@@ -1,7 +1,5 @@
 // script that outputs areal, cubic or surface
 
-//var numbers = prompt("What are the measurements?");
-var numbers = [2,  4];
 console.log(numbers.length);
 checkLength(numbers);
 
