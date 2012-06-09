@@ -16,13 +16,10 @@ checkLength(a);
 function checkLength(x) {
     if (typeof x[0] != 'number') {
         alert("Input numbers please");
-    } else if (numbers.length === 0 || numbers.length ===1) {
     } else if (x.length === 0 || x.length ===1) {
         alert("Need 2 numbers or more");
-    } else if (numbers.length === 2) {
     } else if (x.length === 2) {
         return "Areal: " + calAreal(numbers);
-    } else if (numbers.length === 3) {
     } else if (x.length === 3) {
         return "Cubic is: " + calCubic(numbers);
     } else {
