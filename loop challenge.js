@@ -20,7 +20,7 @@ var l33t = "";
 var l33tstring = "Coders are elites in the digital world";
 for (var i = 0; i < l33tstring.length; i++) {
     var tmpLetter = l33tstring.charAt(i);
-    if (tmpLetter.indexOf("leo")) {
+    if (tmpLetter.toLowerCase().indexOf("leoa")) {
         switch (tmpLetter) {
         case "e":
             tmpLetter = 3;
@@ -30,6 +30,9 @@ for (var i = 0; i < l33tstring.length; i++) {
             break;
         case "o":
             tmpLetter = 0;
+            break;
+        case "a":
+            tmpLetter = 4;
             break;
         default:
             tmpLetter = tmpLetter;
@@ -41,9 +44,9 @@ l33t += tmpLetter;
 console.log(l33t);
 
 // random order of letters
-var rndString = "Bullshit is easy to make, even from meaning";
+var string = "Bullshit is easy to make, even from meaning";
 var rnd = "";
-var rndArray = rndString.split(" ");
+var rndArray = string.split(" ");
 console.log(rndArray);
 for (var i = 0; i < rndArray.length; i++) {
     rndArray[i] = rndArray[i].split("").sort(function() {
@@ -79,7 +82,11 @@ for (var i = 0; i < pArray.length; i++) {
        return 0.5 - Math.random();
     }).join("");
     pArray[i] = first + pWord + last;
-    console.log(pArray[i]);
+    // console.log(pArray[i]);
     newPsychString += pArray[i] + " ";
 };
 console.log(newPsychString);
+
+if (CC.prints().join(",").match((/It is a[mazin]+?g how the m[in]+?d m[ake]+?s o[rde]+?r and m[eanin]+?g b[ase]+?d on p[revious]+?e k[nowledg]+?e/))) {
+    return true;
+}
