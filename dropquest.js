@@ -19,7 +19,6 @@ function func2(str) {
     return newString;
 }
 
-message2 = function2(message2);
 message2 = func2(message2);
 console.log(message2 + " func2 exchange");
 
