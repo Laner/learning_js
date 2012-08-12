@@ -7,22 +7,39 @@ Function 2 - Replace each vowel with the one before it (a→u, e→a, i→e, o�
 Function 5 - Reverse every word that starts with a letter in the second half of the alphabet.
 Function 9 - Remove all words that have 3 letters or less.*
 */
-function func1(str) {
+var func1 = function(str) {
     var newstr = str.replace(/[PUZZLE]/g,"");
     return newstr;
-}
-var message2 = func1(message);
-console.log(message2 + " func1 -JAVASCRIPT");
+};
 
-function func2(str) {
-    var newString = str.replace(/A/gi,"U").replace(/E/gi,"A").replace(/I/gi,"E").replace(/O/gi,"I").replace(/U/gi,"O");
     return newString;
-}
+    var newString = str.replace( /[aeiou\s]/gi, function (c) {
+        switch (c) {
+            case "A":
+                c = "U";
+                break;
+            case "E":
+                c = "A";
+                break;
+            case "I":
+                c = "E";
+                break;
+            case "O":
+                c = "I";
+                break;
+            case "U":
+                c = "O";
+                break;
+            default:
+                break;
 
-message2 = func2(message2);
-console.log(message2 + " func2 exchange");
+        }
+        return c;
+    });
+    return newString;
+};
 
-function func5(str) {
+var func5 = function(str) {
     var strArray = str.split(" ");
     for (var i = 0; i < strArray.length; i++) {
         var word = strArray[i];
@@ -31,12 +48,9 @@ function func5(str) {
             }
     }
     return strArray.join(" ");
-}
+};
 
-message2 = func5(message2);
-console.log(message2 + " func5 reverse");
-
-function func7(str) {
+var func7 = function(str) {
     var strArr = str.split(" ");
     for (var i = 0; i < strArr.length; i++) {
         if (strArr[i].length % 2 === 0) {
@@ -45,11 +59,9 @@ function func7(str) {
         }
     }
     return strArr.join(" ");
-}
-message2 = func7(message2);
-console.log(message2 + " func7 add P");
+};
 
-function func8(str) {
+var func8 = function(str) {
     var strArray = str.split(" ");
     for (var i = 0; i < strArray.length; i++) {
         var word = strArray[i];
@@ -58,12 +70,9 @@ function func8(str) {
             }
     }
     return strArray.join(" ");
-}
+};
 
-message2 = func8(message2);
-console.log(message2 + " func8 reverse");
-
-function func9(str) {
+var func9 = function(str) {
     var strArr = str.split(" ");
         for (var i = 0; i < strArr.length; i++) {
             if (strArr[i].length <= 3) {
@@ -71,20 +80,31 @@ function func9(str) {
             }
         }
     return strArr.join(" ");
-}
-message2 = func9(message2);
-console.log(message2 + " func9 remove");
+};
 
-function func10 (str) {
+var func10 = function (str) {
     return str.replace(/^\s+|\s+$/g, "");
-}
-
-message2 = func10(message2);
-console.log(message2 + " func10 remove");
+};
 
 String.prototype.func1 = function() {
     return this.replace(/[PUZZLE]/g,"");
 };
 
-console.log("PUSSY FLUXZY RUNAR".func1());
+function test (func, input, expect) {
+    var got = func(input);
+    var prefix = "";
+    if (got === expect) {
+        prefix = "OK";
+    } else {
+        prefix = "X";
+    }
+    console.log(prefix + " ==> input: " + input + " got: " + got + " expected: " + expect);
+}
+test(func1,"A PUZZLE FOR YOU", "A  FOR YO");
+test(func1,"BEE BA PELULA", "B BA A");
+test(func1,"CODECADEMY", "CODCADMY");
 
+test(func2,"THI BRUWN FUX", "THE BROWN FOX");
+test(func2,"TAEIOUT", "TUAEIOT");
+test(func2,"MEGAN FOX", "MAGUN FIX");
+// console.log(test.toString());
