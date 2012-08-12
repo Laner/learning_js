@@ -74,3 +74,17 @@ function func9(str) {
 }
 message2 = func9(message2);
 console.log(message2 + " func9 remove");
+
+function func10 (str) {
+    return str.replace(/^\s+|\s+$/g, "");
+}
+
+message2 = func10(message2);
+console.log(message2 + " func10 remove");
+
+String.prototype.func1 = function() {
+    return this.replace(/[PUZZLE]/g,"");
+};
+
+console.log("PUSSY FLUXZY RUNAR".func1());
+
