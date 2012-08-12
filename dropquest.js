@@ -12,7 +12,7 @@ var func1 = function(str) {
     return newstr;
 };
 
-    return newString;
+var func2 = function(str) {
     var newString = str.replace( /[aeiou\s]/gi, function (c) {
         switch (c) {
             case "A":
