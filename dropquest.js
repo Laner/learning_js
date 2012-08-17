@@ -89,22 +89,23 @@ var func10 = function (str) {
 String.prototype.func1 = function() {
     return this.replace(/[PUZZLE]/g,"");
 };
-
-function test (func, input, expect) {
-    var got = func(input);
-    var prefix = "";
-    if (got === expect) {
-        prefix = "OK";
-    } else {
-        prefix = "X";
+function main() {
+    function test (func, input, expect) {
+        var got = func(input);
+        var prefix = "";
+        if (got === expect) {
+            prefix = "OK";
+        } else {
+           prefix = "X";
+        }
+        console.log(prefix + " ==> input: " + input + " got: " + got + " expected: " + expect);
     }
-    console.log(prefix + " ==> input: " + input + " got: " + got + " expected: " + expect);
-}
-test(func1,"A PUZZLE FOR YOU", "A  FOR YO");
-test(func1,"BEE BA PELULA", "B BA A");
-test(func1,"CODECADEMY", "CODCADMY");
+    test(func1,"A PUZZLE FOR YOU", "A  FOR YO");
+    test(func1,"BEE BA PELULA", "B BA A");
+    test(func1,"CODECADEMY", "CODCADMY");
 
-test(func2,"THI BRUWN FUX", "THE BROWN FOX");
-test(func2,"TAEIOUT", "TUAEIOT");
-test(func2,"MEGAN FOX", "MAGUN FIX");
-// console.log(test.toString());
+    test(func2,"THI BRUWN FUX", "THE BROWN FOX");
+    test(func2,"TAEIOUT", "TUAEIOT");
+    test(func2,"MEGAN FOX", "MAGUN FIX");
+    // console.log(test.toString());
+}
