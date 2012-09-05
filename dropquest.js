@@ -1,5 +1,5 @@
 var message = "THE QUICK WN F JUMS VE THE LAZY G THA QOECK BRIWN FIX JOMPS FVAR THA LUZY DIG THA QECK IWN FI JMS IVA THA LUZY IG QUICK JUMS LAZY QUICK BROWN JUMPS OVER LAZY THU QIACK BREWN FEX JIMPS EVUR THU LOZY DEG EHT KCIUQ BROWN FOX JUMPS REVO EHT LAZY DOG THA QOECK WN F JOMS ONDIPINDINT VA THA LUZY G AHT KCEOQ BRIWN FIX JOMPS LVAR AHT LUZY DIG";
-console.log(message + " org");
+// console.log(message + " org");
 
 /*
 *Function 1 - Remove all letters that appear in the word DROPBOX
@@ -54,7 +54,7 @@ var func7 = function(str) {
     var strArr = str.split(" ");
     for (var i = 0; i < strArr.length; i++) {
         if (strArr[i].length % 2 === 0) {
-            var half = ((strArr[i].length / 2)-1);
+            var half = ((strArr[i].length / 2));
             strArr[i] = strArr[i].substring(0, half) + "P" + strArr[i].substring(half);
         }
     }
@@ -100,13 +100,15 @@ function main() {
         }
         console.log(prefix + " ==> input: " + input + " got: " + got + " expected: " + expect);
     }
+    //func1 remove the letters PUZZLE
     test(func1,"A PUZZLE FOR YOU", "A  FOR YO");
     test(func1,"BEE BA PELULA", "B BA A");
     test(func1,"CODECADEMY", "CODCADMY");
-
+    //func2 switch to the vowel infornt
     test(func2,"THI BRUWN FUX", "THE BROWN FOX");
     test(func2,"TAEIOUT", "TUAEIOT");
     test(func2,"MEGAN FOX", "MAGUN FIX");
+<<<<<<< HEAD
     // console.log(test.toString());
 }
 //working validator TODO: rest of the functions
@@ -155,3 +157,27 @@ if (logs == 1 ) {
 } else {
 	return more();
 };
+=======
+    //func5 reverse all words starting with a letter from the second half of the alphabet
+    test(func5,"NANCY DREW", "YCNAN DREW");
+    test(func5,"THE TABLES TURN", "EHT SELBAT NRUT");
+    test(func5,"CAN CAN DANCE", "CAN CAN DANCE");
+    //func7 insert P in the middel of all even words
+    test(func7,"A WORD APART", "A WOPRD APART");
+    test(func7,"FOUR FISH FINGERS", "FOPUR FIPSH FINGERS");
+    test(func7,"ERIKA ELENIAK", "ERIKA ELENIAK");
+    //func8 Remove every word that doesn't start with a vowel.
+    test(func8,"WHAT ABOUT WHITHESPACES", " ABOUT ");
+    test(func8,"AUDREY TAUTOU", "AUDREY ");
+    test(func8,"CANT CLUTCH DIS", "  ");
+    //func9 Remove all words that have 3 letters or less.
+    test(func9,"FOUR THREE AND WE", "FOUR THREE  ");
+    test(func9,"WATCH THE WHITHESPACES", "WATCH  WHITHESPACES");
+    test(func9,"PAULA ABDUL", "PAULA ABDUL");
+    //func10 Remove all whitespaces.
+    test(func10,"TIGHT  SQUEEZE", "TIGHTSQUEEZE");
+    test(func10,"SAMANTHA FOX", "SAMANTHAFOX");
+    test(func10,"ALONGWORDWITHNOSPACE", "ALONGWORDWITHNOSPACE");
+}
+main();
+>>>>>>> ALL validation test
