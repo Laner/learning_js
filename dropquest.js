@@ -119,14 +119,21 @@ function main() {
     test(func2,"MEGAN FOX", "MAGUN FIX");
     //func5 reverse all words starting with a letter from the second half of the alphabet
     test(func5,"NANCY DREW", "YCNAN DREW");
+    test(func5,"THE TABLES TURN", "EHT SELBAT NRUT");
+    test(func5,"CAN CAN DANCE", "CAN CAN DANCE");
     test(func7,"A WORD APART", "A WOPRD APART");
+    test(func7,"FOUR FISH FINGERS", "FOPUR FIPSH FINGERS");
     test(func7,"ERIKA ELENIAK", "ERIKA ELENIAK");
     //func8 Remove every word that doesn't start with a vowel.
+    test(func8,"WHAT ABOUT WHITHESPACES", " ABOUT ");
     test(func8,"AUDREY TAUTOU", "AUDREY ");
     test(func8,"CANT CLUTCH DIS", "  ");
     //func9 Remove all words that have 3 letters or less.
+    test(func9,"FOUR THREE AND WE", "FOUR THREE  ");
     test(func9,"WATCH THE WHITHESPACES", "WATCH  WHITHESPACES");
+    test(func9,"PAULA ABDUL", "PAULA ABDUL");
     //func10 Remove all whitespaces.
+    test(func10,"TIGHT  SQUEEZE", "TIGHTSQUEEZE");
     test(func10,"SAMANTHA FOX", "SAMANTHAFOX");
     test(func10,"ALONGWORDWITHNOSPACE", "ALONGWORDWITHNOSPACE");
 }
@@ -138,12 +145,13 @@ function log() {
     var result = 0;
 	if (CC.printed("INDEPENDENT")) {
 		console.log("You solved it. Nice!");
+		result = 1;
 	} else if (CC.printed("Show me")) {
 		console.log(more.toString());
 		console.log(test.toString());
-		result = -1
+		result = -1;
 	}
-	return result
+	return result;
 }
 function test (func, input, expect) {
 // checks for existance of input and if expected matches output
