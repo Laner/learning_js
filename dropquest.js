@@ -163,16 +163,16 @@ function test (func, input, expect) {
 }
 
 function more() {
-		var test3 = test(func1,"CODECADEMY", "CODCADMY");
-		result = test1 && test2 && test3;
     if (typeof func1 != "undefined") {
         //does var exsist?
         var func = func1;
         console.log(func);
         if (typeof func == "function") {
             //is it a function? if so run test
+            var test1 = test(func,"A PUZZLE FOR YOU", "A  FOR YO");
             var test2 = test(func,"BEE BA PELULA", "B BA A");
             var test3 = test(func,"CODECADEMY", "CODCADMY");
+            result = test1 && test2 && test3;
         }
     } else {
         console.log("Have you created the function? (or checked the spelling)");
@@ -182,6 +182,7 @@ function more() {
 more();
 // var logs = log();
 //evaluate log from console and run func based on output
+var logs = 10;
 if (logs == 1 ) {
 	return true;
 } else if (logs == -1) {
