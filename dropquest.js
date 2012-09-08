@@ -82,17 +82,10 @@ var func9 = function(str) {
     return strArr.join(" ");
 };
 
-var func10 = function (str) {
-    var strArr = str.split("");
-    var result = [];
-    console.log(strArr);
-    for (var i = 0; i < strArr.length; i++) {
-        if (strArr[i] == " ") {
-            result.push(strArr[i]);
-        }
     }
-    result = result.join("");
-    return result;
+var func10 = function(str) {
+    var newstr = str.replace(/\s/g,"");
+    return newstr;
 };
 
 String.prototype.func1 = function() {
