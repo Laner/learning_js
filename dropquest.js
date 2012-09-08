@@ -121,6 +121,7 @@ function main() {
     test(func5,"NANCY DREW", "YCNAN DREW");
     test(func5,"THE TABLES TURN", "EHT SELBAT NRUT");
     test(func5,"CAN CAN DANCE", "CAN CAN DANCE");
+    //func7 insert P in the middel of all even words
     test(func7,"A WORD APART", "A WOPRD APART");
     test(func7,"FOUR FISH FINGERS", "FOPUR FIPSH FINGERS");
     test(func7,"ERIKA ELENIAK", "ERIKA ELENIAK");
