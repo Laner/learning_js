@@ -163,6 +163,7 @@ function test (func, input, expect) {
 }
 
 function more() {
+    var result = false;
     if (typeof func1 != "undefined") {
         //does var exsist?
         var func = func1;
