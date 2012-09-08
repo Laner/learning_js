@@ -82,7 +82,6 @@ var func9 = function(str) {
     return strArr.join(" ");
 };
 
-    }
 var func10 = function(str) {
     var newstr = str.replace(/\s/g,"");
     return newstr;
@@ -131,7 +130,7 @@ function main() {
     test(func10,"SAMANTHA FOX", "SAMANTHAFOX");
     test(func10,"ALONGWORDWITHNOSPACE", "ALONGWORDWITHNOSPACE");
 }
-main();
+// main();
     // console.log(test.toString());
 
 //working validator TODO: rest of the functions
