@@ -133,10 +133,13 @@ function main() {
 // main();
     // console.log(test.toString());
 
-//working validator TODO: rest of the functions
+//working validator
+//starts here:
 function log() {
+    //assignes a value to the result var based on console output
     var result = 0;
 	if (CC.printed("INDEPENDENT")) {
+        //CC.printed is a built in function from Codecademy
 		console.log("You solved it. Nice!");
 		result = 1;
 	} else if (CC.printed("Show me")) {
@@ -170,8 +173,12 @@ function more() {
 		console.log("Have you created the function? (or checked the spelling)");
 	}
 	return result;
+        //does var exsist?
+            //is it a function? if so run test
 }
-var logs = log();
+more();
+// var logs = log();
+//evaluate log from console and run func based on output
 if (logs == 1 ) {
 	return true;
 } else if (logs == -1) {
