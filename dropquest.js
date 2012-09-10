@@ -54,7 +54,7 @@ var func7 = function(str) {
     var strArr = str.split(" ");
     for (var i = 0; i < strArr.length; i++) {
         if (strArr[i].length % 2 === 0) {
-            var half = ((strArr[i].length / 2));
+            var half = ((strArr[i].length/ 2)-1);
             strArr[i] = strArr[i].substring(0, half) + "P" + strArr[i].substring(half);
         }
     }
