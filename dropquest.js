@@ -86,6 +86,14 @@ var func10 = function(str) {
     var newstr = str.replace(/\s/g,"");
     return newstr;
 };
+var newmsg = func1(message);
+newmsg = func2(newmsg);
+newmsg = func5(newmsg);
+newmsg = func7(newmsg);
+newmsg = func8(newmsg);
+newmsg = func9(newmsg);
+newmsg = func10(newmsg);
+console.log("[" + newmsg + "]");
 
 String.prototype.func1 = function() {
     return this.replace(/[PUZZLE]/g,"");
@@ -180,7 +188,7 @@ function more() {
     }
     return result;
 }
-more();
+// more();
 // var logs = log();
 //evaluate log from console and run func based on output
 var logs = 10;
@@ -191,4 +199,3 @@ if (logs == 1 ) {
 } else {
 	return more();
 }
-
