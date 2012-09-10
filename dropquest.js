@@ -199,3 +199,7 @@ if (logs == 1 ) {
 } else {
 	return more();
 }
+var newmsg = func1(message);
+newmsg = func2(newmsg);
+newmsg = func5(newmsg);
+console.log("test" + newmsg);
